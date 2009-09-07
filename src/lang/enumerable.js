@@ -426,6 +426,7 @@ var Enumerable = (function() {
    *  Returns the debug-oriented string representation of the object.
   **/
   function inspect() {
+    if (!this._each) { return String(this); }
     return '#<Enumerable:' + this.toArray().inspect() + '>';
   }
 
